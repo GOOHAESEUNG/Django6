@@ -10,6 +10,8 @@ class Profile(models.Model):
     nickname = models.CharField(max_length=128)
     position = models.CharField(max_length=128)
     subjects = models.CharField(max_length=128)
+    mbti = models.CharField(max_length=128)
+    role = models.CharField(max_length=128)
     image = models.ImageField(upload_to='profile/', default='default.png')
 
 
