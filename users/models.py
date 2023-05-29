@@ -24,3 +24,8 @@ def create_user_profile(sender, instance, created, **kwargs):
 @receiver(post_save, sender=User)
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
+
+def filter_posts_by_mbti(mbti):
+    # 필터링할 게시글 가져오기
+    posts = Post.objects.filter(author__profile__mbti=mbti)
+    return posts
